@@ -1,0 +1,4 @@
+services:
+  Apps.todo.controllers.StatusGetController:
+    class: ../../controllers/StatusGetController
+    arguments: []
