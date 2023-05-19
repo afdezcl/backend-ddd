@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "npx tsc",
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix"
   },
   "keywords": [],
   "author": "",
