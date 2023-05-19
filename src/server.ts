@@ -6,7 +6,7 @@ import Router from 'express-promise-router'
 import helmet from 'helmet'
 import type * as http from 'http'
 import httpStatus from 'http-status'
-// import { registerRoutes } from './routes'
+import { registerRoutes } from './routes'
 
 export class Server {
   private readonly express: express.Express
@@ -27,7 +27,7 @@ export class Server {
     router.use(errorHandler())
     this.express.use(router)
 
-    // registerRoutes(router)
+    registerRoutes(router)
 
     router.use((err: Error, req: Request, res: Response, next: Function) => {
       console.log(err)
@@ -36,7 +36,7 @@ export class Server {
   }
 
   async listen (): Promise<void> {
-    await new Promise(resolve => {
+    await new Promise<void>(resolve => {
       this.httpServer = this.express.listen(this.port, () => {
         console.log(
           `  Todo App is running at http://localhost:${this.port} in ${this.express.get('env')} mode`
@@ -52,7 +52,7 @@ export class Server {
   }
 
   async stop (): Promise<void> {
-    await new Promise((resolve, reject) => {
+    await new Promise<void>((resolve, reject) => {
       if (this.httpServer != null) {
         this.httpServer.close(error => {
           if (error != null) {
