@@ -5,15 +5,22 @@
     "files": true,
     "esm": true
   },
+  "include": [
+    "src/**/**.ts",
+    "tests/**/**.ts"
+  ],
   "compilerOptions": {
-    "outDir": "dist",
-    "incremental": true,
-    "target": "es2019",
-    "strict": true,
+    "module": "commonjs",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "rootDir": ".",
+    "strict": true,
+    "noEmit": false,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "outDir": "./dist"
   }
 }
