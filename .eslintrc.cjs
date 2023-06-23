@@ -11,6 +11,8 @@ module.exports = {
     '@typescript-eslint/promise-function-async': 'off',
     'n/no-path-concat': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
-    '@typescript-eslint/no-floating-promises': 'off'
+    '@typescript-eslint/no-floating-promises': 'off',
+    'space-before-function-paren': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off'
   }
 }
