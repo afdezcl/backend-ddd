@@ -1,12 +1,13 @@
 import { AggregateRoot } from './AgregateRoot'
+import { CourseId } from './CourseId'
 import { CourseName } from './CourseName'
 
 export class Course extends AggregateRoot {
-  readonly id: string
+  readonly id: CourseId
   readonly duration: string
   readonly name: CourseName
 
-  constructor(id: string, duration: string, name: CourseName) {
+  constructor(id: CourseId, duration: string, name: CourseName) {
     super()
     this.id = id
     this.duration = duration
