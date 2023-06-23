@@ -16,6 +16,10 @@ export class Course extends AggregateRoot {
   }
 
   toPrimitives(): any {
-    throw new Error('Method not implemented.')
+    return {
+      id: this.id.value,
+      duration: this.duration.value,
+      name: this.name.value
+    }
   }
 }
