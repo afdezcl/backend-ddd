@@ -1,16 +1,16 @@
 services:
   Mooc.courses.CourseRepository:
-    class: ../../../../Contexts/Courses/infrastructure/MongoCourseRepository
+    class: '../../../../Contexts/Courses/infrastructure/MongoCourseRepository'
     arguments: []
 
   Mooc.courses.CourseCreator:
-  class: ../../../../Contexts/Courses/application/CourseCreator
-  arguments: [@Mooc.courses.CourseRepository]  
+    class: '../../../../Contexts/Courses/application/CourseCreator'
+    arguments: ['@Mooc.courses.CourseRepository']  
 
   Apps.todo.controllers.StatusGetController:
-    class: ../../controllers/StatusGetController
+    class: '../../controllers/StatusGetController'
     arguments: []
 
   Apps.todo.controllers.CoursesPostController:
-  class: ../../controllers/CoursesPostController
-  arguments: [@Mooc.courses.CourseCreator] 
+    class: '../../controllers/CoursesPostController'
+    arguments: ['@Mooc.courses.CourseCreator'] 

@@ -3,7 +3,7 @@ import httpStatus from 'http-status'
 import { CourseCreator } from '../../../Contexts/Courses/application/CourseCreator'
 import { Controller } from './Controller'
 
-export class CoursePostController implements Controller {
+export class CoursesPostController implements Controller {
   constructor(private readonly courseCreator: CourseCreator) { }
 
   async run(req: Request, res: Response) {

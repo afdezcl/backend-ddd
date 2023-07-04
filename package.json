@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "dev": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  ./src/start.ts",
+    "dev": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  ./src/apps/platform/start.ts",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix"
   },
@@ -22,8 +22,10 @@
     "glob": "^7.1.6",
     "helmet": "^7.0.0",
     "http-status": "^1.6.2",
+    "knex": "^2.4.2",
     "mongodb": "^5.6.0",
     "node-dependency-injection": "^2.6.11",
+    "pg": "^8.11.1",
     "uuid": "^9.0.0",
     "uuid-validate": "^0.0.3"
   },
