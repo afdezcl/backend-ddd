@@ -1,6 +1,6 @@
 services:
   Mooc.courses.CourseRepository:
-    class: '../../../../Contexts/Courses/infrastructure/MongoCourseRepository'
+    class: '../../../../Contexts/Courses/infrastructure/PostgresCourseRepository'
     arguments: []
 
   Mooc.courses.CourseCreator:
