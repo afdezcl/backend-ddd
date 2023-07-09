@@ -1,7 +1,13 @@
 services:
+  Mooc.ConnectionDataBaseManager:
+    factory:
+      class: '../../../../Contexts/Shared/infrastructure/persistence/typeorm/TypeOrmClientFactory'
+      method: 'createClient'
+    arguments: ['Courses']
+
   Mooc.courses.CourseRepository:
-    class: '../../../../Contexts/Courses/infrastructure/PostgresCourseRepository'
-    arguments: []
+    class: '../../../../Contexts/Courses/infrastructure/TypeOrmCourseRepository'
+    arguments: ['@Mooc.ConnectionDataBaseManager']
 
   Mooc.courses.CourseCreator:
     class: '../../../../Contexts/Courses/application/CourseCreator'
