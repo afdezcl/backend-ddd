@@ -1,1 +1,1 @@
-CREATE DATABASE notes;
+CREATE DATABASE courses;
