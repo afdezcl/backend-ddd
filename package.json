@@ -27,7 +27,8 @@
     "node-dependency-injection": "^2.6.11",
     "pg": "^8.11.1",
     "uuid": "^9.0.0",
-    "uuid-validate": "^0.0.3"
+    "uuid-validate": "^0.0.3",
+    "typeorm": "^0.3.10"
   },
   "devDependencies": {
     "@types/compression": "^1.7.2",
