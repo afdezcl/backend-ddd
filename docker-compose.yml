@@ -10,6 +10,7 @@ services:
     environment:
       POSTGRES_USER: askit
       POSTGRES_PASSWORD: askit
+      POSTGRES_DB: courses
     healthcheck:
       test: ['CMD-SHELL', 'echo 1']
       interval: 5s
