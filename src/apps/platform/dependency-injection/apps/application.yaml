@@ -12,6 +12,10 @@ services:
   Mooc.courses.CourseCreator:
     class: '../../../../Contexts/Courses/application/CourseCreator'
     arguments: ['@Mooc.courses.CourseRepository']  
+  
+  Mooc.courses.SearchAll:
+    class: '../../../../Contexts/Courses/application/SearchAll'
+    arguments: ['@Mooc.courses.CourseRepository']  
 
   Apps.todo.controllers.StatusGetController:
     class: '../../controllers/StatusGetController'
@@ -20,3 +24,7 @@ services:
   Apps.todo.controllers.CoursesPostController:
     class: '../../controllers/CoursesPostController'
     arguments: ['@Mooc.courses.CourseCreator'] 
+
+  Apps.todo.controllers.CoursesGetController:
+    class: '../../controllers/CoursesGetController'
+    arguments: ['@Mooc.courses.SearchAll'] 
