@@ -8,7 +8,9 @@ export class CoursesGetController implements Controller {
 
   async run(req: Request, res: Response) {
     try {
-      await this.searchAll.run()
+      const courses = await this.searchAll.run()
+
+      res.json(courses)
     } catch (error: any) {
       res.status(httpStatus.INTERNAL_SERVER_ERROR).json(error)
     }
