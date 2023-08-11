@@ -17,6 +17,10 @@ services:
     class: '../../../../Contexts/Courses/application/SearchAll'
     arguments: ['@Mooc.courses.CourseRepository']  
 
+  Mooc.courses.SearchById:
+    class: '../../../../Contexts/Courses/application/SearchById'
+    arguments: ['@Mooc.courses.CourseRepository']  
+
   Apps.todo.controllers.StatusGetController:
     class: '../../controllers/StatusGetController'
     arguments: []
@@ -28,3 +32,7 @@ services:
   Apps.todo.controllers.CoursesGetController:
     class: '../../controllers/CoursesGetController'
     arguments: ['@Mooc.courses.SearchAll'] 
+  
+  Apps.todo.controllers.CoursesGetByIdController:
+    class: '../../controllers/CoursesGetByIdController'
+    arguments: ['@Mooc.courses.SearchById'] 

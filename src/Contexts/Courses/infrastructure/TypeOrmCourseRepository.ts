@@ -3,6 +3,7 @@ import { TypeOrmRepository } from '../../Shared/infrastructure/persistence/typeo
 import { Course } from '../domain/Course'
 import { CourseRepository } from '../domain/CourseRepository'
 import { CourseEntity } from './persistence/CourseEntity'
+import { CourseId } from '../domain/CourseId'
 
 export class TypeOrmCourseRepository extends TypeOrmRepository<Course> implements CourseRepository {
   public save(course: Course): Promise<void> {
@@ -19,5 +20,13 @@ export class TypeOrmCourseRepository extends TypeOrmRepository<Course> implement
     const courses = await repository.find()
 
     return courses
+  }
+
+  public async searchById(id: CourseId): Promise<Course | null> {
+    const repository = await this.repository()
+
+    const course = await repository.findOne({ where: { id } })
+
+    return course ?? null
   }
 }
