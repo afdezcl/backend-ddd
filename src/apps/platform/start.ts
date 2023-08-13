@@ -1,7 +1,7 @@
-import { TodoApp } from './TodoApp'
+import { CoursesApp } from './CoursesApp'
 
 try {
-  new TodoApp().start()
+  new CoursesApp().start()
 } catch (e) {
   console.log(e)
   process.exit(1)

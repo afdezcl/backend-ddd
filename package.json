@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
+    "test": "NODE_ENV=test npx jest",
     "dev": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  ./src/apps/platform/start.ts",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix"

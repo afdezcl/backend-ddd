@@ -1,20 +1,20 @@
 import { Server } from './server'
 
-export class TodoApp {
+export class CoursesApp {
   server?: Server
 
-  async start () {
+  async start() {
     const port = process.env.PORT ?? '5001'
     this.server = new Server(port)
 
     await this.server.listen()
   }
 
-  get httpServer () {
+  get httpServer() {
     return this.server?.getHTTPServer()
   }
 
-  async stop () {
+  async stop() {
     return await this.server?.stop()
   }
 }
