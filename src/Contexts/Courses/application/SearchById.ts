@@ -5,7 +5,7 @@ import { CourseReponse } from './CourseResponse'
 export class SearchById {
   constructor(private readonly courseRepository: CourseRepository) { }
 
-  async run(id: string): Promise<any> {
+  async run(id: string): Promise<CourseReponse> {
     const course = await this.courseRepository.searchById(new CourseId(id))
 
     if (course == null) {
