@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "test": "NODE_ENV=test npx jest",
+    "test": "NODE_ENV=test npx jest --config ./jest.config.js",
     "dev": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules  ./src/apps/platform/start.ts",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix"
@@ -41,9 +41,14 @@
     "@types/uuid-validate": "^0.0.1",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
+    "@types/jest": "^24.0.18",
+    "@types/supertest": "^2.0.8",
     "concurrently": "^8.0.1",
     "eslint": "^8.40.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.1.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",

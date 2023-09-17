@@ -3,6 +3,9 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json'
   },
+  env: {
+    jest: true
+  },
   rules: {
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/consistent-type-imports': 'off',

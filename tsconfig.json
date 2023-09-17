@@ -7,7 +7,9 @@
   },
   "include": [
     "src/**/**.ts",
-    "tests/**/**.ts"
+    "tests/**/**.ts",
+    "package*.json",
+    "project*.json"
   ],
   "compilerOptions": {
     "module": "commonjs",
