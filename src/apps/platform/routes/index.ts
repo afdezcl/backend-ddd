@@ -1,17 +1,20 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { Router, Request, Response } from 'express'
 import { ValidationError, validationResult } from 'express-validator'
-import glob from 'glob'
 import httpStatus from 'http-status'
+import { CustomHandler } from '../types'
+import { Controller } from '../controllers/Controller'
+import { container } from '../dependency-injection/dependency-injection'
+import { healthRoutes } from './status.route'
+import { coursesRoutes } from './courses.route'
 
-export function registerRoutes (router: Router) {
-  const routes = glob.sync(__dirname + '/**/*.route.*')
-  routes.map(route => register(route, router))
-}
+const handleWith: CustomHandler = (name) => (req, res) => container.resolve<Controller>(name).handle(req, res)
 
-function register (routePath: string, router: Router) {
-  const route = require(routePath)
-  route.register(router)
+export function registerRoutes(router: Router) {
+  const routes = [healthRoutes, coursesRoutes]
+  routes.map((route) => {
+    route(router, handleWith)
+  })
 }
 
 export function validateReqSchema (req: Request, res: Response, next: () => void) {

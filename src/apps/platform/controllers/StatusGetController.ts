@@ -1,9 +1,10 @@
-import { Request, Response } from 'express'
+import type { Response } from 'express'
 import httpStatus from 'http-status'
 import { Controller } from './Controller'
+import { CustomRequest } from '../types'
 
 export default class StatusGetController implements Controller {
-  async run (req: Request, res: Response) {
+  async handle (req: CustomRequest, res: Response) {
     res.status(httpStatus.OK).send()
   }
 }

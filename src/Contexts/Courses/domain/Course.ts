@@ -22,4 +22,20 @@ export class Course extends AggregateRoot {
       name: this.name.value
     }
   }
+
+  public static fromPrimitives({
+    id,
+    duration,
+    name
+  }: {
+    id: string
+    duration: string
+    name: string
+  }): Course {
+    return new Course(
+      new CourseId(id),
+      new CourseDuration(duration),
+      new CourseName(name)
+    )
+  }
 }

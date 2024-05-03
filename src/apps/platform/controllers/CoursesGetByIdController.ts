@@ -1,12 +1,13 @@
-import { Request, Response } from 'express'
+import { Response } from 'express'
 import httpStatus from 'http-status'
 import { Controller } from './Controller'
 import { SearchById } from '../../../Contexts/Courses/application/SearchById'
+import { CustomRequest } from '../types'
 
 export class CoursesGetByIdController implements Controller {
   constructor(private readonly searchById: SearchById) { }
 
-  async run(req: Request, res: Response) {
+  async handle(req: CustomRequest, res: Response) {
     const id: string = req.params.id
 
     try {

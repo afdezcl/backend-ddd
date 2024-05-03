@@ -1,12 +1,13 @@
-import { Request, Response } from 'express'
+import { Response } from 'express'
 import httpStatus from 'http-status'
 import { Controller } from './Controller'
 import { SearchAll } from '../../../Contexts/Courses/application/SearchAll'
+import { CustomRequest } from '../types'
 
 export class CoursesGetController implements Controller {
   constructor(private readonly searchAll: SearchAll) { }
 
-  async run(req: Request, res: Response) {
+  async handle(req: CustomRequest, res: Response) {
     try {
       const courses = await this.searchAll.run()
 

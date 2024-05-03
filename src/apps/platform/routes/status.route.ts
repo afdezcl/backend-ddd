@@ -1,8 +1,6 @@
-import { Router, Request, Response } from 'express'
-import container from '../dependency-injection'
-import StatusController from '../controllers/StatusGetController'
+import { Router } from 'express'
+import { CustomHandler } from '../types'
 
-export const register = (router: Router) => {
-  const controller: StatusController = container.get('Apps.todo.controllers.StatusGetController')
-  router.get('/status', (req: Request, res: Response) => controller.run(req, res))
+export const healthRoutes = (router: Router, handleWith: CustomHandler) => {
+  router.get('/status', handleWith('statusGetController'))
 }

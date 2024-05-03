@@ -1,5 +1,6 @@
-import { Request, Response } from 'express'
+import { Response } from 'express'
+import { CustomRequest } from '../types'
 
 export interface Controller {
-  run: (req: Request, res: Response) => Promise<void>
+  handle: (req: CustomRequest, res: Response) => Promise<void> | void
 }
