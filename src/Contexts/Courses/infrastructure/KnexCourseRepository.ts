@@ -4,7 +4,7 @@ import { CourseRepository } from '../domain/CourseRepository'
 import { CourseId } from '../domain/CourseId'
 import { KnexDatabaseContext } from '../../Shared/infrastructure/persistence/knex/KnexDatabaseContext'
 
-export class TypeOrmCourseRepository implements CourseRepository {
+export class KnexCourseRepository implements CourseRepository {
   constructor(private readonly databaseContext: KnexDatabaseContext) {}
 
   public async save(course: Course): Promise<void> {

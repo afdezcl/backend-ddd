@@ -9,8 +9,8 @@ import { CourseCreator } from '../../../Contexts/Courses/application/CourseCreat
 import { SearchAll } from '../../../Contexts/Courses/application/SearchAll'
 import { SearchById } from '../../../Contexts/Courses/application/SearchById'
 
-import { TypeOrmCourseRepository } from '../../../Contexts/Courses/infrastructure/TypeOrmCourseRepository'
 import { KnexDatabaseContext } from '../../../Contexts/Shared/infrastructure/persistence/knex/KnexDatabaseContext'
+import { KnexCourseRepository } from '../../../Contexts/Courses/infrastructure/KnexCourseRepository'
 
 const controllers = {
   statusGetController: asClass(StatusGetController),
@@ -26,7 +26,7 @@ const application = {
 }
 
 const infrastructure = {
-  courseRepository: asClass(TypeOrmCourseRepository),
+  courseRepository: asClass(KnexCourseRepository),
   databaseContext: asClass(KnexDatabaseContext, { lifetime: 'SINGLETON' })
 }
 
