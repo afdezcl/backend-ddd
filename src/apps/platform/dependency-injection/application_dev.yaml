@@ -4,13 +4,13 @@ services:
     arguments: []
 
   Mooc.courses.CourseCreator:
-    class: '../../../../Contexts/Courses/application/CourseCreator'
+    class: '../../../Contexts/Courses/application/CourseCreator'
     arguments: ['@Mooc.courses.CourseRepository']  
 
   Mooc.courses.SearchById:
-    class: '../../../../Contexts/Courses/application/SearchById'
+    class: '../../../Contexts/Courses/application/SearchById'
     arguments: ['@Mooc.courses.CourseRepository']  
   
   Apps.todo.controllers.CoursesGetByIdController:
-    class: '../../controllers/CoursesGetByIdController'
+    class: '../controllers/CoursesGetByIdController'
     arguments: ['@Mooc.courses.SearchById'] 
